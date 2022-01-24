@@ -1,0 +1,4 @@
+﻿select Top(3) m.StudentId,Students.Name, (m.Maths + m.English + m.Science) as Total
+from Marks m
+inner join Students on m.StudentId=Students.Id
+order by Total desc
