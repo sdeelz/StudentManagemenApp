@@ -1,0 +1,30 @@
+﻿@model MarkDisplayViewModel;
+
+
+<div>
+    <table class="table-bordered">
+        <thead>
+            <tr>
+
+                <th>Name</th>
+                <th>English</th>
+                <th>Maths</th>
+                <th>Science</th>
+                <th>Total Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.student.Name</td>
+                <td>@Model.mark.English</td>
+                <td>@Model.mark.Maths</td>
+                <td>@Model.mark.Science</td>
+                <td>@Model.TotalMarks</td>
+                <td>
+                    <a asp-controller="Student" asp-action="Index" class="btn btn-primary">Back</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

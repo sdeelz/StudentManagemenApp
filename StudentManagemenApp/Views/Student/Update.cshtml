@@ -1,0 +1,17 @@
+﻿@model Student;
+
+<div>
+    <form asp-controller="Student" asp-action="Update" method="post">
+        <input type="hidden" asp-for="Id"/>
+        <label asp-for="Name">Enter Name</label>
+        <input asp-for="Name" />
+        <br />
+        <label asp-for="Email">Enter Email</label>
+        <input asp-for="Email" />
+        <br />
+        <label asp-for="Age">Enter Age</label>
+        <input asp-for="Age" />
+        <br />
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>

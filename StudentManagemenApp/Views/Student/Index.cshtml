@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Student>;
+
+
+<div>
+    <a asp-controller="Student" asp-action="Create"class="btn btn-primary">Add New Student</a>
+    <table class="table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Marks</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(Model == null)
+            {
+                <tr>
+                    <td>
+                        No Student found!!
+                    </td>
+                </tr>
+            }
+            else
+            {
+                @foreach (var student in Model)
+                {
+                    <tr>
+                        <td>@student.Id</td>
+                        <td>@student.Name</td>
+                        <td>@student.Email</td>
+                        <td>@student.Age</td>
+                        <td>
+                            <a asp-controller="Student" asp-action="DisplayMarks" asp-route-id="@student.Id">View Marks</a>
+                        </td>
+                        <td>
+                            <a asp-controller="Student" asp-action="Update" asp-route-id="@student.Id">Edit</a>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+
+</div>
